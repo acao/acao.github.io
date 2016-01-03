@@ -3,3 +3,4 @@ node_modules/
 build/
 *.swp
 !node_modules/antwar-rikki-theme
+node_modules/antwar-rikki-theme/node_modules
