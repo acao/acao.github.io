@@ -13,7 +13,7 @@ export default class Note extends React.Component {
         return (
           <li key={`post-list-item-${i}`}>
             <h3 className="post-list__heading">
-              <Link to={url}>{name}</Link>
+              <Link to={`/projects/${name}`}>{name}</Link>
             </h3>
             <p className="post-list__preview">{description}</p>
           </li>

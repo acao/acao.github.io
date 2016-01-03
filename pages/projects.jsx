@@ -9,7 +9,8 @@ export default class Projects extends React.Component {
     this.state = {
       projects: []
     }
-    getProjects();
+    this.getProjects = this.getProjects.bind(this);
+    this.getProjects();
   }
 
   getProjects() {
