@@ -9,9 +9,10 @@ export default class Projects extends React.Component {
     this.state = {
       projects: []
     }
+    getProjects();
   }
 
-  componentWillMount() {
+  getProjects() {
     fetch('http://api.github.com/users/acao/repos?type=owner')
       .then(function(response) {
           if (response.status >= 400) {

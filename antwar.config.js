@@ -38,7 +38,7 @@ module.exports = {
       {title: 'Blog', url: '/blog'}
     ],
     //logo: function(){ return require('./logo.svg')},
-    analyticsId: 'UA-XXXXXX-1',
+    analyticsId: 'UA-71919566-1',
     customStyles: 'specific.scss'
   },
   paths: {
