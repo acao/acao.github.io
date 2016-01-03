@@ -1,8 +1,8 @@
 {
-  "name": "antwar-boilerplate",
-  "description": "Boilerplate for Antwar",
+  "name": "rschulte.com",
+  "description": "Personal Site for Rikki Schulte",
   "author": "",
-  "version": "0.5.0",
+  "version": "0.0.1",
   "dependencies": {
     "antwar-default-theme": "^0.4.0",
     "antwar-helpers": "git+https://github.com/antwarjs/helpers.git",
@@ -27,9 +27,9 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/antwarjs/boilerplate.git"
+    "url": "https://github.com/acao/acao.github.io"
   },
-  "homepage": "https://github.com/antwarjs/boilerplate",
+  "homepage": "https://acao.github.io",
   "bugs": {
     "url": "https://github.com/antwarjs/boilerplate/issues"
   },
