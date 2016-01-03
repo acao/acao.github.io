@@ -6,10 +6,10 @@ var highlightPlugin = require('antwar-highlight-plugin');
 
 module.exports = {
   output: 'build',
-  name: 'Antwar Boilerplate',
+  name: 'Rschulte.com',
   author: {
-    name: 'Dr A N Twar',
-    email: 'antwar@antwar.com'
+    name: 'Rikki Schulte',
+    email: 'richard.j.schulte@gmail.com'
   },
   deploy: {
     branch: 'master',
@@ -22,7 +22,7 @@ module.exports = {
   // ],
   plugins: [
     // rssPlugin(),
-    // prevnextPlugin(),
+    prevnextPlugin(),
     highlightPlugin({
       style: function() {
         require('highlight.js/styles/github.css');
@@ -31,11 +31,13 @@ module.exports = {
     })
   ],
   theme: {
-    name: "antwar-default-theme",
+    name: "antwar-rikki-theme",
     navigation: [
       {title: 'Home', url: '/'},
-      {title: 'Projects', url: '/projects'},
-      {title: 'Blog', url: '/blog'}
+      {title: 'Works', url: '/works'},
+      {title: 'Blog', url: '/blog'},
+      {title: 'About', url: '/about'},
+      {title: 'Open Source', url: '/opensource'}
     ],
     //logo: function(){ return require('./logo.svg')},
     //analyticsId: 'UA-71919566-1',
@@ -56,6 +58,21 @@ module.exports = {
       draft: function() {
         return require.context('./drafts', true, /^\.\/.*\.md$/);
       },
-    }
+    },
+    works: {
+      title: 'Works',
+      // layouts:{
+      //   index: function() {
+      //    return themeConfig.layouts().WorksIndex;
+      //  },
+      //  page: function() {
+      //    return themeConfig.layouts().DocsPage;
+      //  }
+      // },
+
+      path: function() {
+        return require.context('./projects', true, /^\.\/.*\.md$/);
+      },
+    },
   },
 };

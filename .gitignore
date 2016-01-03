@@ -2,3 +2,4 @@ node_modules/
 .antwar/
 build/
 *.swp
+!node_modules/antwar-rikki-theme
