@@ -24,10 +24,10 @@ export default class OpenSource extends React.Component {
   // }
   render() {
     return (
-      <div className='post'>
-        <h1 className='post__heading'>Open Source Projects</h1>
-        <p>Because I wouldn't be here if it weren't for the Open Source software movement</p>
-        <ProjectList projects={this.items} />
+      <div className="grid">
+          <h1>Open Source Projects</h1>
+          <p>Because I wouldn't be here if it weren't for the Open Source software movement</p>
+          <ProjectList projects={this.items} />
       </div>
     );
   }

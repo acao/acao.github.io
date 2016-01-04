@@ -63,7 +63,6 @@ module.exports = {
     '/': {
       name: 'Home',
       title: 'Home',
-      description: 'stuff',
       path: function() {
         return require.context('./pages');
       },
@@ -72,7 +71,7 @@ module.exports = {
       name: 'Home',
       title: 'Articles',
       layout: 'BlogPage',
-      description: 'stuff',
+
       path: function() {
         return require.context('./posts', true, /^\.\/.*\.md$/);
       },
@@ -83,14 +82,10 @@ module.exports = {
     work: {
       name: 'Home',
       title: 'Work',
-      description: 'stuff',
       layouts: {
-        index: function() {
-         return themeConfig.layouts().WorksIndex;
-       },
-       page: function() {
-         return themeConfig.layouts().DocsPage;
-       }
+        page: function() {
+          return require('./layouts/WorkItem.jsx');
+        },
       },
       path: function() {
         return require.context('./projects', true, /^\.\/.*\.md$/);

@@ -9,29 +9,29 @@ export default React.createClass({
     const articles = this.getSectionItems('articles');
 
     return (
-      <div className='post post--front'>
-      <h1 className='post__heading'>About Rikki!</h1>
-        <ul className="post-list">{_.map(articles, (page, i) => {
-          return (
-            <li key={`post-list-item-${i}`}>
-              <h3 className="post-list__heading">
-                <Link to={'/' + page.url}>{page.title}</Link>
+      <div className="grid">
+        <h1>About Rikki!</h1>
+          <ul className="post-list">{_.map(articles, (page, i) => {
+            return (
+              <li key={`post-list-item-${i}`}>
+                <h3 className="post-list__heading">
+                  <Link to={'/' + page.url}>{page.title}</Link>
 
-                {page.isDraft ?
-                  <span className="draft-text">Draft</span> :
+                  {page.isDraft ?
+                    <span className="draft-text">Draft</span> :
+                    null
+                  }
+                </h3>
+
+                {page.date ?
+                  <MomentDisplay className="post__moment" datetime={page.date} /> :
                   null
                 }
-              </h3>
 
-              {page.date ?
-                <MomentDisplay className="post__moment" datetime={page.date} /> :
-                null
-              }
-
-              <p className="post-list__preview">{page.preview}</p>
-            </li>
-          );
-        })}</ul>
+                <p className="post-list__preview">{page.preview}</p>
+              </li>
+            );
+          })}</ul>
       </div>
     );
   }

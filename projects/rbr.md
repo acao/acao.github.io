@@ -8,3 +8,4 @@ preview: 'Angular, Bootstrap, Jekyll, and GeoJSON meet in a bike-powered worker 
 features: ['Jekyll', 'Bootstrap', 'Cloudflare', 'AngularJs', 'LocalStorage', 'Google Drive API', 'Heroku']
 type: static
 ---
+RustBelt Riders Composting Cooperative
