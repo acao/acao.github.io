@@ -6,29 +6,42 @@ import MomentDisplay from 'antwar-rikki-theme/MomentDisplay';
 export default React.createClass({
   mixins: [Paths],
   render: function() {
-    const articles = this.getSectionItems('articles');
-
+    const articles = require('../data/medium-@ad_harmonium.json');
+    const works = this.getSectionItems('work');
     return (
       <div className="grid">
-        <h1>About Rikki!</h1>
-          <ul className="post-list">{_.map(articles, (page, i) => {
+          <h1>Hi I'm Rikki I like to write Javascript</h1>
+          <h2>Articles</h2>
+          <ul className="post-grid reset">{_.map(articles, (page, i) => {
+            if (i > 3){
+              return;
+            }
             return (
-              <li key={`post-list-item-${i}`}>
-                <h3 className="post-list__heading">
-                  <Link to={'/' + page.url}>{page.title}</Link>
-
-                  {page.isDraft ?
-                    <span className="draft-text">Draft</span> :
-                    null
-                  }
+              <li key={`post-grid-item-${i}`}>
+                <h3 className="post-grid__heading">
+                  <a href={page.link} target="_blank">{page.title} </a>
                 </h3>
 
-                {page.date ?
-                  <MomentDisplay className="post__moment" datetime={page.date} /> :
+                {page.published ?
+                  <MomentDisplay className="post__moment" datetime={page.published} /> :
                   null
                 }
+                <div className="post-grid__preview" dangerouslySetInnerHTML={{__html: page.content}} />
+              </li>
+            );
+          })}</ul>
+          <h2>Work</h2>
+          <ul className="post-grid reset">{_.map(works, (page, i) => {
+            if (i > 3){
+              return;
+            }
+            return (
+              <li key={`post-grid-item-${i}`}>
+                <h3 className="post-grid__heading">
+                  <Link to={'/' + page.url}>{page.title}</Link>
+                </h3>
 
-                <p className="post-list__preview">{page.preview}</p>
+                <div className="post-grid__preview" dangerouslySetInnerHTML={{__html: page.preview}} />
               </li>
             );
           })}</ul>

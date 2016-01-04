@@ -5,14 +5,15 @@
   "version": "0.0.1",
   "dependencies": {
     "antwar-default-theme": "^0.4.0",
-    "antwar-rikki-theme": "^0.0.0",
     "antwar-helpers": "git+https://github.com/antwarjs/helpers.git",
     "antwar-highlight-plugin": "^0.3.0",
     "antwar-minimal-theme": "^0.2.0",
     "antwar-prevnext-plugin": "^0.2.1",
+    "antwar-rikki-theme": "^0.0.0",
     "antwar-rss-plugin": "^0.2.0",
     "axios": "^0.8.1",
     "clean": "^4.0.2",
+    "feed-read": "0.0.1",
     "fetcher": "^0.2.0",
     "highlight.js": "^9.0.0",
     "isomorphic-fetch": "^2.2.0",
@@ -21,9 +22,9 @@
     "react-router": "^1.0.3"
   },
   "scripts": {
-    "start": "antwar -d",
-    "build": "antwar -b",
-    "deploy": "antwar -D"
+    "start": "node ./getdata.js && antwar -d",
+    "build": "node ./getdata.js && antwar -b",
+    "deploy": "npm run build && antwar -D"
   },
   "devDependencies": {},
   "repository": {

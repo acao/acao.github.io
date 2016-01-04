@@ -15,28 +15,51 @@ export default class About extends React.Component {
           <h1>About Rikki!</h1>
           <h2>About</h2>
           <p>{this.resume.statement}</p>
-          <aside >
-          <h2>Skills</h2>
-          <SkillsList
-            style={styles.skillsList}
-            list={skills.client}
-            header={'Client/Browser'}
-          />
-          <SkillsList
-            style={styles.skillsList}
-            list={skills.server}
-            header={'Server'}
-          />
-          <SkillsList
-            style={styles.skillsList}
-            list={skills.ops}
-            header={'Dev/Sys Ops'}
-          />
-          <SkillsList
-            style={styles.skillsList}
-            list={skills.tooling}
-            header={'Tooling'}
-          />
+          <aside>
+            <h2>Skills</h2>
+            <SkillsList
+              style={styles.skillsList}
+              list={skills.client}
+              header={'Client/Browser'}
+            />
+            <SkillsList
+              style={styles.skillsList}
+              list={skills.server}
+              header={'Server'}
+            />
+            <SkillsList
+              style={styles.skillsList}
+              list={skills.ops}
+              header={'Dev/Sys Ops'}
+            />
+            <SkillsList
+              style={styles.skillsList}
+              list={skills.tooling}
+              header={'Tooling'}
+            />
+          </aside>
+          <aside>
+            <h2>Work History</h2>
+            <SkillsList
+              style={styles.skillsList}
+              list={skills.client}
+              header={'Client/Browser'}
+            />
+            <SkillsList
+              style={styles.skillsList}
+              list={skills.server}
+              header={'Server'}
+            />
+            <SkillsList
+              style={styles.skillsList}
+              list={skills.ops}
+              header={'Dev/Sys Ops'}
+            />
+            <SkillsList
+              style={styles.skillsList}
+              list={skills.tooling}
+              header={'Tooling'}
+            />
           </aside>
         </div>
     );
@@ -45,7 +68,7 @@ export default class About extends React.Component {
 
 const styles = {
   skillsList: {
-    width: '33%',
+    width: '33.33333%',
     margin: 0,
     display: 'block',
     float: 'left',

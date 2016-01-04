@@ -67,18 +67,18 @@ module.exports = {
         return require.context('./pages');
       },
     },
-    articles: {
-      name: 'Home',
-      title: 'Articles',
-      layout: 'BlogPage',
-
-      path: function() {
-        return require.context('./posts', true, /^\.\/.*\.md$/);
-      },
-      draft: function() {
-        return require.context('./drafts', true, /^\.\/.*\.md$/);
-      },
-    },
+    // articles: {
+    //   name: 'Home',
+    //   title: 'Articles',
+    //   layout: 'BlogPage',
+    //
+    //   path: function() {
+    //     return require.context('./posts', true, /^\.\/.*\.md$/);
+    //   },
+    //   draft: function() {
+    //     return require.context('./drafts', true, /^\.\/.*\.md$/);
+    //   },
+    // },
     work: {
       name: 'Home',
       title: 'Work',
