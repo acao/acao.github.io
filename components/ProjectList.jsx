@@ -24,6 +24,7 @@ export default class Note extends React.Component {
 
 const styles = {
   listItem: {
+    textAlign: 'center',
     width: '50%',
     margin: 0,
     display: 'inline-block',

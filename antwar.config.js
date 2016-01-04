@@ -2,11 +2,14 @@
 
 var prevnextPlugin = require('antwar-prevnext-plugin');
 var highlightPlugin = require('antwar-highlight-plugin');
-
+var rssPlugin = require('antwar-rss-plugin');
+var themeConfig = require('antwar-rikki-theme');
 
 module.exports = {
   output: 'build',
+  title: 'Rschulte.com',
   name: 'Rschulte.com',
+  description: 'Stuff',
   author: {
     name: 'Rikki Schulte',
     email: 'richard.j.schulte@gmail.com'
@@ -14,6 +17,16 @@ module.exports = {
   deploy: {
     branch: 'master',
   },
+  assets: [
+    {
+      from: 'assets',
+      to: 'assets',
+    },
+    {
+      from: './CNAME',
+      to: './',
+    }
+  ],
   // plugins: [
   //   rssPlugin({
   //     baseUrl: '<your url here>',
@@ -21,7 +34,10 @@ module.exports = {
   //   }),
   // ],
   plugins: [
-    // rssPlugin(),
+    rssPlugin({
+        baseUrl: 'http://antwarjs.github.io',
+        sections: ['articles']
+      }),
     prevnextPlugin(),
     highlightPlugin({
       style: function() {
@@ -33,11 +49,11 @@ module.exports = {
   theme: {
     name: "antwar-rikki-theme",
     navigation: [
-      {title: 'Home', url: '/'},
-      {title: 'Works', url: '/works'},
-      {title: 'Blog', url: '/blog'},
-      {title: 'About', url: '/about'},
-      {title: 'Open Source', url: '/opensource'}
+      {name: 'Home', title: 'Home', url: '/', description: 'stuff'},
+      {name: 'Work', title: 'Work', url: '/work'},
+      {name: 'Open Source', title: 'Open Source', url: '/opensource'},
+      {name: 'Articles', title: 'Articles', url: '/articles'},
+      {name: 'About', title: 'About', url: '/about'},
     ],
     //logo: function(){ return require('./logo.svg')},
     //analyticsId: 'UA-71919566-1',
@@ -45,13 +61,18 @@ module.exports = {
   },
   paths: {
     '/': {
+      name: 'Home',
+      title: 'Home',
+      description: 'stuff',
       path: function() {
         return require.context('./pages');
-      }
+      },
     },
-    blog: {
-      title: 'Blog posts',
+    articles: {
+      name: 'Home',
+      title: 'Articles',
       layout: 'BlogPage',
+      description: 'stuff',
       path: function() {
         return require.context('./posts', true, /^\.\/.*\.md$/);
       },
@@ -59,17 +80,18 @@ module.exports = {
         return require.context('./drafts', true, /^\.\/.*\.md$/);
       },
     },
-    works: {
-      title: 'Works',
-      // layouts:{
-      //   index: function() {
-      //    return themeConfig.layouts().WorksIndex;
-      //  },
-      //  page: function() {
-      //    return themeConfig.layouts().DocsPage;
-      //  }
-      // },
-
+    work: {
+      name: 'Home',
+      title: 'Work',
+      description: 'stuff',
+      layouts: {
+        index: function() {
+         return themeConfig.layouts().WorksIndex;
+       },
+       page: function() {
+         return themeConfig.layouts().DocsPage;
+       }
+      },
       path: function() {
         return require.context('./projects', true, /^\.\/.*\.md$/);
       },

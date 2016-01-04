@@ -7,6 +7,7 @@ export default class OpenSource extends React.Component {
   constructor(props, context){
     super(props, context);
     this.items = require('../data/projects.json').items;
+    console.log(props, context);
   }
 
   // getProjects() {
@@ -22,7 +23,6 @@ export default class OpenSource extends React.Component {
   //     });
   // }
   render() {
-
     return (
       <div className='post'>
         <h1 className='post__heading'>Open Source Projects</h1>
